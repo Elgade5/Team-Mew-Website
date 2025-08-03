@@ -6,8 +6,8 @@
     <title>Team Mew - PokeMMO</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-        
-        /* Thème sombre par défaut */
+
+        /* Default Dark Theme */
         :root,
         .theme-dark {
             --primary-color: #f7a0be;
@@ -18,8 +18,8 @@
             --link-color: #5865f2;
             --border-radius: 10px;
         }
-        
-        /* Thème clair */
+
+        /* Light Theme */
         .theme-light {
             --primary-color: #ff69b4;
             --secondary-color: #6a8cff;
@@ -53,7 +53,7 @@
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
-        /* Styles de la navigation */
+        /* Navigation Styles */
         .navbar {
             display: flex;
             justify-content: center;
@@ -89,7 +89,7 @@
             margin-bottom: 20px;
             transition: background 0.3s ease;
         }
-        
+
         .main-logo-container {
             text-align: center;
             padding: 50px 20px;
@@ -130,7 +130,7 @@
             text-align: center;
         }
 
-        /* Styles pour le staff */
+        /* Staff Styles */
         .staff-ranking-container {
             display: flex;
             flex-direction: column;
@@ -177,7 +177,7 @@
             font-style: italic;
         }
 
-        /* Nouveaux styles pour le bouton Discord */
+        /* New Discord button styles */
         .discord-button {
             display: inline-flex;
             align-items: center;
@@ -200,7 +200,7 @@
             height: 20px;
         }
 
-        /* Styles pour les règles */
+        /* Rules Styles */
         .rules ol {
             padding-left: 20px;
         }
@@ -215,8 +215,8 @@
             font-weight: bold;
             color: #ff6347;
         }
-        
-        /* Styles pour les rôles de région */
+
+        /* Region Roles Styles */
         .region-roles ul {
             list-style-type: none;
             padding: 0;
@@ -248,7 +248,7 @@
             color: #ccc;
         }
 
-        /* Styles de la section "Join Us" */
+        /* "Join Us" Section Styles */
         .join-us {
             text-align: center;
             padding: 20px;
@@ -272,15 +272,15 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
         }
-        
+
         .content-section {
             display: none;
         }
         .content-section.active {
             display: block;
         }
-        
-        /* Styles pour les sections minimalistes */
+
+        /* Minimalist Section Styles */
         .simple-content {
             text-align: center;
         }
@@ -289,7 +289,7 @@
             font-size: 1.1em;
         }
 
-        /* Sélecteur de thèmes */
+        /* Theme Selector */
         .theme-selector {
             position: fixed;
             top: 20px;
@@ -312,7 +312,7 @@
         }
         .theme-selector #dark-theme { background-color: #2c2f33; }
         .theme-selector #light-theme { background-color: #f0f2f5; }
-        
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 2em;
@@ -335,8 +335,8 @@
 <body class="theme-dark">
 
     <div class="theme-selector">
-        <button id="dark-theme" title="Thème Sombre"></button>
-        <button id="light-theme" title="Thème Clair"></button>
+        <button id="dark-theme" title="Dark Theme"></button>
+        <button id="light-theme" title="Light Theme"></button>
     </div>
 
     <div class="navbar">
@@ -384,11 +384,11 @@
                             <p>Leader</p>
                             <a href="https://discord.com/users/993967857627046028" target="_blank" class="discord-button">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M352 128H256V0L96 128H256V256L352 128zM96 384H192V512L352 384H192V256L96 384z"/></svg>
-                                Contacter sur Discord
+                                Contact on Discord
                             </a>
                         </div>
                     </div>
-                    
+
                     <div class="staff-ranking-group">
                         <div class="staff-member">
                             <img src="juju.png" alt="Juju's Discord Avatar">
@@ -396,7 +396,7 @@
                             <p>Executive</p>
                             <a href="https://discord.com/users/310421342090690570" target="_blank" class="discord-button">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M352 128H256V0L96 128H256V256L352 128zM96 384H192V512L352 384H192V256L96 384z"/></svg>
-                                Contacter sur Discord
+                                Contact on Discord
                             </a>
                         </div>
                     </div>
@@ -408,7 +408,7 @@
                             <p>Officer</p>
                             <a href="https://discord.com/users/469947747626254356" target="_blank" class="discord-button">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M352 128H256V0L96 128H256V256L352 128zM96 384H192V512L352 384H192V256L96 384z"/></svg>
-                                Contacter sur Discord
+                                Contact on Discord
                             </a>
                         </div>
                         <div class="staff-member">
@@ -417,7 +417,7 @@
                             <p>Officer</p>
                             <a href="https://discord.com/users/1384540316195098646" target="_blank" class="discord-button">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M352 128H256V0L96 128H256V256L352 128zM96 384H192V512L352 384H192V256L96 384z"/></svg>
-                                Contacter sur Discord
+                                Contact on Discord
                             </a>
                         </div>
                         <div class="staff-member">
@@ -426,7 +426,7 @@
                             <p>Officer</p>
                             <a href="https://discord.com/users/361146489180782594" target="_blank" class="discord-button">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M352 128H256V0L96 128H256V256L352 128zM96 384H192V512L352 384H192V256L96 384z"/></svg>
-                                Contacter sur Discord
+                                Contact on Discord
                             </a>
                         </div>
                         <div class="staff-member">
@@ -435,7 +435,7 @@
                             <p>Officer</p>
                             <a href="https://discord.com/users/1191673658645680208" target="_blank" class="discord-button">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M352 128H256V0L96 128H256V256L352 128zM96 384H192V512L352 384H192V256L96 384z"/></svg>
-                                Contacter sur Discord
+                                Contact on Discord
                             </a>
                         </div>
                     </div>
@@ -467,7 +467,7 @@
             <h2 style="text-align: center;">Shiny Showcase</h2>
             <p style="text-align: center;">Coming soon! This is where we'll show off our team's latest shiny catches.</p>
         </section>
-        
+
         <section id="events" class="content-section simple-content">
             <h2 style="text-align: center;">Events Calendar</h2>
             <p>
@@ -499,7 +499,7 @@
     </footer>
 
     <script>
-        // Script pour changer les thèmes
+        // Script to change themes
         document.getElementById('dark-theme').addEventListener('click', function() {
             document.body.className = 'theme-dark';
         });
@@ -507,7 +507,7 @@
             document.body.className = 'theme-light';
         });
 
-        // Script pour changer de section
+        // Script to change sections
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('.nav-link');
             const sections = document.querySelectorAll('.content-section');
@@ -515,10 +515,10 @@
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
-                    
+
                     navLinks.forEach(l => l.classList.remove('active'));
                     sections.forEach(s => s.classList.remove('active'));
-                    
+
                     this.classList.add('active');
                     const targetSectionId = this.getAttribute('data-section');
                     document.getElementById(targetSectionId).classList.add('active');
