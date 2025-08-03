@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team Mew - PokeMMO</title>
+    <link rel="icon" href="icon team.png" type="image/png">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
@@ -128,6 +129,44 @@
         .about p {
             font-size: 1.1em;
             text-align: center;
+        }
+
+        /* Member Count Styles */
+        .member-count-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        .member-count-card {
+            background-color: #40444b;
+            padding: 25px 40px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            min-width: 250px;
+            flex: 1;
+            max-width: 350px;
+            border: 2px solid var(--secondary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .member-count-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary-color);
+        }
+        .member-count-card h3 {
+            font-size: 1.5em;
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+        .member-count-card p {
+            font-size: 3em;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin: 0;
+            line-height: 1;
         }
 
         /* Staff Styles */
@@ -273,11 +312,29 @@
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
         }
 
+        /* Fade-in effect for sections */
         .content-section {
             display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
         }
         .content-section.active {
             display: block;
+            opacity: 1;
+        }
+
+        /* Fade-in on scroll effect */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .fade-in:nth-child(even) {
+            transform: translateY(-20px);
         }
 
         /* Minimalist Section Styles */
@@ -329,6 +386,14 @@
                 width: 25px;
                 height: 25px;
             }
+            .member-count-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .member-count-card {
+                min-width: 100%;
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -349,7 +414,7 @@
 
     <div class="container">
         <section id="home" class="content-section active">
-            <div class="main-logo-container">
+            <div class="main-logo-container fade-in">
                 <img src="team_mew_logo.jpg" alt="Team Mew Logo" width="500">
                 <h2>Welcome to Team Mew</h2>
                 <p>
@@ -361,10 +426,24 @@
                     </a>
                 </p>
             </div>
+
+            <div class="section fade-in">
+                <h2 style="text-align: center;">Team Mew Statistics</h2>
+                <div class="member-count-container">
+                    <div class="member-count-card">
+                        <h3>Discord Server</h3>
+                        <p>97</p>
+                    </div>
+                    <div class="member-count-card">
+                        <h3>On PokeMMO</h3>
+                        <p>76</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="about" class="content-section">
-            <section class="section about">
+            <section class="section about fade-in">
                 <h2>About Us</h2>
                 <p>
                     We're a casual, friendly team focused on fun PvE gameplay and social events. With regular lotteries and giveaways, we keep the excitement alive while building a positive community for all PokeMMO players.
@@ -374,7 +453,7 @@
                 </p>
             </section>
 
-            <section class="section staff">
+            <section class="section staff fade-in">
                 <h2>Team Staff</h2>
                 <div class="staff-ranking-container">
                     <div class="staff-ranking-group">
@@ -403,8 +482,8 @@
 
                     <div class="staff-ranking-group">
                         <div class="staff-member">
-                            <img src="officier 1.webp" alt="Improvise's Discord Avatar">
-                            <h3>Improvise</h3>
+                            <img src="officier 1.webp" alt="Lmprovise's Discord Avatar">
+                            <h3>Lmprovise</h3>
                             <p>Officer</p>
                             <a href="https://discord.com/users/469947747626254356" target="_blank" class="discord-button">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M352 128H256V0L96 128H256V256L352 128zM96 384H192V512L352 384H192V256L96 384z"/></svg>
@@ -442,7 +521,7 @@
                 </div>
             </section>
 
-            <section class="section rules">
+            <section class="section rules fade-in">
                 <h2>Team Rules</h2>
                 <ol>
                     <li>Respect all players & staff.</li>
@@ -486,7 +565,7 @@
             </p>
         </section>
 
-        <section class="section join-us">
+        <section class="section join-us fade-in">
             <h2>Join Us</h2>
             <p>If you wish to be part of our community and our PvE journey, don't hesitate!</p>
             <a href="https://discord.gg/UrgucWW3t4" target="_blank">Join Team Mew on Discord</a>
@@ -507,7 +586,7 @@
             document.body.className = 'theme-light';
         });
 
-        // Script to change sections
+        // Script to change sections with fade effect
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('.nav-link');
             const sections = document.querySelectorAll('.content-section');
@@ -516,13 +595,57 @@
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
 
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    sections.forEach(s => s.classList.remove('active'));
-
-                    this.classList.add('active');
+                    const currentActiveSection = document.querySelector('.content-section.active');
                     const targetSectionId = this.getAttribute('data-section');
-                    document.getElementById(targetSectionId).classList.add('active');
+                    const targetSection = document.getElementById(targetSectionId);
+
+                    // Fade out the current section
+                    if (currentActiveSection) {
+                        currentActiveSection.style.opacity = '0';
+                        setTimeout(() => {
+                            currentActiveSection.classList.remove('active');
+                            // Fade in the new section after the old one is hidden
+                            targetSection.classList.add('active');
+                            setTimeout(() => {
+                                targetSection.style.opacity = '1';
+                            }, 50); // A small delay to ensure display: block is applied first
+                        }, 500); // Wait for fade-out to complete (500ms)
+                    } else {
+                        // If no active section, just show the new one
+                        targetSection.classList.add('active');
+                        setTimeout(() => {
+                            targetSection.style.opacity = '1';
+                        }, 50);
+                    }
+
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
                 });
+            });
+        });
+
+        // Script for fade-in on scroll effect
+        document.addEventListener('DOMContentLoaded', function() {
+            const faders = document.querySelectorAll('.fade-in');
+
+            const appearOptions = {
+                threshold: 0.1, // L'élément devient visible quand 10% de celui-ci est à l'écran
+                rootMargin: "0px 0px -50px 0px" // Déclenchement 50px avant d'atteindre le bas de l'élément
+            };
+
+            const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    } else {
+                        entry.target.classList.add('visible');
+                        appearOnScroll.unobserve(entry.target);
+                    }
+                });
+            }, appearOptions);
+
+            faders.forEach(fader => {
+                appearOnScroll.observe(fader);
             });
         });
     </script>
