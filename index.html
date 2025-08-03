@@ -89,14 +89,6 @@
             margin-bottom: 20px;
             transition: background 0.3s ease;
         }
-
-        header img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 5px solid var(--text-color);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
         
         .main-logo-container {
             text-align: center;
@@ -138,7 +130,7 @@
             text-align: center;
         }
 
-        /* Nouveaux styles pour le classement du staff */
+        /* Styles pour le staff */
         .staff-ranking-container {
             display: flex;
             flex-direction: column;
@@ -168,7 +160,6 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
             z-index: 10;
         }
-
         .staff-member img {
             width: 80px;
             height: 80px;
@@ -177,54 +168,87 @@
             margin-bottom: 10px;
             object-fit: cover;
         }
-
         .staff-member h3 {
             margin: 0 0 5px;
             color: var(--secondary-color);
         }
-
         .staff-member p {
             margin: 0;
             font-style: italic;
         }
 
-        .roles-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
+        /* Nouveaux styles pour le bouton Discord */
+        .discord-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background-color: #5865f2;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+        .discord-button:hover {
+            background-color: #4752c4;
+            transform: translateY(-1px);
+        }
+        .discord-button svg {
+            width: 20px;
+            height: 20px;
         }
 
-        .role-card {
-            background-color: #40444b;
-            padding: 15px;
-            border-left: 4px solid var(--primary-color);
-            border-radius: var(--border-radius);
-            transition: border-color 0.3s ease;
-        }
-
-        .role-card h4 {
-            margin-top: 0;
-            color: var(--secondary-color);
-        }
-
+        /* Styles pour les règles */
         .rules ol {
             padding-left: 20px;
         }
-
         .rules li {
             margin-bottom: 10px;
         }
-
         .rules strong {
             color: var(--primary-color);
         }
-
         .rules p {
             margin-top: 20px;
             font-weight: bold;
             color: #ff6347;
         }
+        
+        /* Styles pour les rôles de région */
+        .region-roles ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .region-roles li {
+            background-color: #40444b;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        .region-roles li:hover {
+            background-color: #55585f;
+        }
+        .region-roles span {
+            color: var(--secondary-color);
+        }
+        .region-roles p {
+            margin: 0;
+            font-weight: normal;
+            font-style: italic;
+            color: #ccc;
+        }
 
+        /* Styles de la section "Join Us" */
         .join-us {
             text-align: center;
             padding: 20px;
@@ -232,7 +256,6 @@
             border-radius: var(--border-radius);
             transition: background 0.3s ease;
         }
-
         .join-us a {
             display: inline-block;
             background-color: var(--text-color);
@@ -245,40 +268,9 @@
             transition: transform 0.2s, box-shadow 0.2s;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
-
         .join-us a:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
-        }
-        
-        .pve-alerts ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .region-completion ul, .pve-alerts ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .region-completion li, .pve-alerts li {
-            background-color: #40444b;
-            padding: 10px;
-            margin-bottom: 5px;
-            border-radius: 5px;
-        }
-
-        .region-completion span, .pve-alerts span {
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            margin-top: 20px;
-            color: #888;
-            font-size: 0.9em;
         }
         
         .content-section {
@@ -296,7 +288,6 @@
             margin-top: 20px;
             font-size: 1.1em;
         }
-
 
         /* Sélecteur de thèmes */
         .theme-selector {
@@ -391,6 +382,10 @@
                             <img src="mew leader image.webp" alt="Mew's Discord Avatar">
                             <h3>Mew</h3>
                             <p>Leader</p>
+                            <a href="https://discord.com/users/993967857627046028" target="_blank" class="discord-button">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M352 128H256V0L96 128H256V256L352 128zM96 384H192V512L352 384H192V256L96 384z"/></svg>
+                                Contacter sur Discord
+                            </a>
                         </div>
                     </div>
                     
@@ -399,6 +394,10 @@
                             <img src="juju.png" alt="Juju's Discord Avatar">
                             <h3>Juju</h3>
                             <p>Executive</p>
+                            <a href="https://discord.com/users/310421342090690570" target="_blank" class="discord-button">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M352 128H256V0L96 128H256V256L352 128zM96 384H192V512L352 384H192V256L96 384z"/></svg>
+                                Contacter sur Discord
+                            </a>
                         </div>
                     </div>
 
@@ -407,21 +406,37 @@
                             <img src="officier 1.webp" alt="Improvise's Discord Avatar">
                             <h3>Improvise</h3>
                             <p>Officer</p>
+                            <a href="https://discord.com/users/469947747626254356" target="_blank" class="discord-button">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M352 128H256V0L96 128H256V256L352 128zM96 384H192V512L352 384H192V256L96 384z"/></svg>
+                                Contacter sur Discord
+                            </a>
                         </div>
                         <div class="staff-member">
                             <img src="officier 2.webp" alt="Takashi Akihiro's Discord Avatar">
                             <h3>Takashi Akihiro</h3>
                             <p>Officer</p>
+                            <a href="https://discord.com/users/1384540316195098646" target="_blank" class="discord-button">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M352 128H256V0L96 128H256V256L352 128zM96 384H192V512L352 384H192V256L96 384z"/></svg>
+                                Contacter sur Discord
+                            </a>
                         </div>
                         <div class="staff-member">
                             <img src="officier 3.webp" alt="Enma's Discord Avatar">
                             <h3>Enma</h3>
                             <p>Officer</p>
+                            <a href="https://discord.com/users/361146489180782594" target="_blank" class="discord-button">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M352 128H256V0L96 128H256V256L352 128zM96 384H192V512L352 384H192V256L96 384z"/></svg>
+                                Contacter sur Discord
+                            </a>
                         </div>
                         <div class="staff-member">
                             <img src="officier 4.webp" alt="SHAthrix's Discord Avatar">
                             <h3>SHAthrix</h3>
                             <p>Officer</p>
+                            <a href="https://discord.com/users/1191673658645680208" target="_blank" class="discord-button">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M352 128H256V0L96 128H256V256L352 128zM96 384H192V512L352 384H192V256L96 384z"/></svg>
+                                Contacter sur Discord
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -445,32 +460,6 @@
                     </li>
                 </ol>
                 <p>Breaking rules &rarr; warning &rarr; removal.</p>
-            </section>
-
-            <section class="section pve-info">
-                <h2>PvE Information</h2>
-                <div class="pve-alerts">
-                    <h3>PvE Alerts</h3>
-                    <ul>
-                        <li><span>Shiny Charms:</span> Ping when a shiny charm is available</li>
-                        <li><span>Alpha:</span> Ping when there's an Alpha spawn</li>
-                        <li><span>Water Pheno:</span> For Water-type Phenomena</li>
-                        <li><span>Shadow Pheno:</span> For Shadow-Phenomena</li>
-                        <li><span>Dust Pheno:</span> For Dust Phenomena</li>
-                        <li><span>Grass Pheno:</span> For Grass-type Phenomena</li>
-                        <li><span>Swarm:</span> Ping when there is a Swarm</li>
-                    </ul>
-                </div>
-                <div class="region-completion">
-                    <h3>Regions Completed Roles</h3>
-                    <ul>
-                        <li><span>Kanto:</span> Charmander role</li>
-                        <li><span>Johto:</span> Cyndaquil role</li>
-                        <li><span>Hoenn:</span> Torchic role</li>
-                        <li><span>Sinnoh:</span> Chimchar role</li>
-                        <li><span>Unova:</span> and Tepig role</li>
-                    </ul>
-                </div>
             </section>
         </section>
 
@@ -539,4 +528,3 @@
     </script>
 </body>
 </html>
-
