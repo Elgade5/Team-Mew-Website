@@ -41,7 +41,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: background-color 0.5s ease, color 0.5s ease;
         }
 
         .container {
@@ -52,7 +52,7 @@
             background-color: var(--card-background);
             border-radius: var(--border-radius);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            transition: background-color 0.5s ease, box-shadow 0.5s ease;
         }
 
         /* Navigation Styles */
@@ -63,7 +63,7 @@
             background-color: var(--card-background);
             padding: 10px 20px;
             border-bottom: 2px solid var(--primary-color);
-            transition: background-color 0.3s, border-color 0.3s;
+            transition: background-color 0.5s, border-color 0.5s;
         }
         .navbar a {
             color: var(--text-color);
@@ -89,7 +89,7 @@
             background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
             border-radius: var(--border-radius) var(--border-radius) 0 0;
             margin-bottom: 20px;
-            transition: background 0.3s ease;
+            transition: background 0.5s ease;
         }
 
         .main-logo-container {
@@ -115,7 +115,7 @@
             background-color: var(--card-background);
             border-radius: var(--border-radius);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            transition: background-color 0.5s ease, box-shadow 0.5s ease;
         }
 
         h2 {
@@ -124,7 +124,7 @@
             border-bottom: 2px solid var(--primary-color);
             padding-bottom: 10px;
             margin-top: 0;
-            transition: color 0.3s ease, border-color 0.3s ease;
+            transition: color 0.5s ease, border-color 0.5s ease;
         }
 
         .about p {
@@ -257,35 +257,38 @@
         }
 
         /* Region Roles Styles */
-        .region-roles ul {
-            list-style-type: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 20px;
+        .region-roles {
+            text-align: center;
         }
-        .region-roles li {
+        .region-roles h3 {
+            font-size: 1.5em;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        .region-roles-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        .region-role-item {
             background-color: #40444b;
             padding: 10px 20px;
-            border-radius: 50px;
+            border-radius: var(--border-radius);
             font-weight: bold;
             color: var(--primary-color);
             text-align: center;
-            transition: background-color 0.3s;
+            transition: transform 0.2s, background-color 0.3s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 400px;
         }
-        .region-roles li:hover {
+        .region-role-item:hover {
+            transform: translateY(-2px);
             background-color: #55585f;
         }
-        .region-roles span {
+        .region-role-item span {
             color: var(--secondary-color);
-        }
-        .region-roles p {
-            margin: 0;
-            font-weight: normal;
-            font-style: italic;
-            color: #ccc;
         }
 
         /* "Join Us" Section Styles */
@@ -294,7 +297,7 @@
             padding: 20px;
             background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
             border-radius: var(--border-radius);
-            transition: background 0.3s ease;
+            transition: background 0.5s ease;
         }
         .join-us a {
             display: inline-block;
@@ -311,6 +314,106 @@
         .join-us a:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Games Section Styles */
+        .games-section {
+            text-align: center;
+            padding: 20px;
+        }
+        .games-section h2 {
+            margin-bottom: 20px;
+        }
+        .games-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .pokemon-game-container {
+            background-color: #40444b;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+        .pokemon-game-container img {
+            width: 150px;
+            height: 150px;
+            filter: brightness(0) invert(1); /* This creates the silhouette effect */
+            transition: filter 0.5s ease;
+        }
+        .pokemon-game-container.revealed img {
+            filter: none;
+        }
+        .game-controls {
+            margin-top: 20px;
+        }
+        .game-controls input {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin-right: 10px;
+            background-color: #555;
+            color: #fff;
+        }
+        .game-controls button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: var(--primary-color);
+            color: var(--card-background);
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+        .game-controls button:hover {
+            background-color: #d17a99;
+            transform: translateY(-1px);
+        }
+        #game-message {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* Gallery Section Styles */
+        #gallery {
+            text-align: center;
+        }
+        .intro-image-container {
+            margin-top: 20px;
+        }
+        .intro-image-container img {
+            max-width: 80%;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .intro-text-container {
+            background-color: #40444b;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            margin-top: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+        .intro-text-container h3 {
+            color: #7289da;
+            margin: 0;
+            font-size: 1em;
+        }
+        .intro-text-container p {
+            margin: 5px 0 0;
+            font-size: 0.9em;
+            color: #b9bbbe;
+        }
+        .intro-text-container img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
         }
 
         /* Fade-in effect for sections */
@@ -408,6 +511,8 @@
     <div class="navbar">
         <a href="#" class="nav-link active" data-section="home">Home</a>
         <a href="#" class="nav-link" data-section="about">About</a>
+        <a href="#" class="nav-link" data-section="games">Games</a>
+        <a href="#" class="nav-link" data-section="gallery">Gallery</a>
         <a href="#" class="nav-link" data-section="shiny-showcase">Shiny Showcase</a>
         <a href="#" class="nav-link" data-section="events">Events</a>
         <a href="#" class="nav-link" data-section="guides">Guides/Help</a>
@@ -416,7 +521,7 @@
     <div class="container">
         <section id="home" class="content-section active">
             <div class="main-logo-container fade-in">
-                <img src="team_mew_logo.jpg" alt="Team Mew Logo" width="500">
+                <img src="team_mew_logo.jpg" alt="Team Mew logo with a Mew image" width="500">
                 <h2>Welcome to Team Mew</h2>
                 <p>
                     We're a friendly and active team on PokeMMO, focused on PvE and community events.
@@ -459,7 +564,7 @@
                 <div class="staff-ranking-container">
                     <div class="staff-ranking-group">
                         <div class="staff-member">
-                            <img src="mew leader image.webp" alt="Mew's Discord Avatar">
+                            <img src="mew leader image.webp" alt="Discord avatar of leader Mew">
                             <h3>Mew</h3>
                             <p>Leader</p>
                             <a href="https://discord.com/users/993967857627046028" target="_blank" class="discord-button">
@@ -471,7 +576,7 @@
 
                     <div class="staff-ranking-group">
                         <div class="staff-member">
-                            <img src="juju.png" alt="Juju's Discord Avatar">
+                            <img src="juju.png" alt="Discord avatar of executive Juju">
                             <h3>Juju</h3>
                             <p>Executive</p>
                             <a href="https://discord.com/users/310421342090690570" target="_blank" class="discord-button">
@@ -483,7 +588,7 @@
 
                     <div class="staff-ranking-group">
                         <div class="staff-member">
-                            <img src="officier 1.webp" alt="Lmprovise's Discord Avatar">
+                            <img src="officier 1.webp" alt="Discord avatar of officer Lmprovise">
                             <h3>Lmprovise</h3>
                             <p>Officer</p>
                             <a href="https://discord.com/users/469947747626254356" target="_blank" class="discord-button">
@@ -492,7 +597,7 @@
                             </a>
                         </div>
                         <div class="staff-member">
-                            <img src="officier 2.webp" alt="Takashi Akihiro's Discord Avatar">
+                            <img src="officier 2.webp" alt="Discord avatar of officer Takashi Akihiro">
                             <h3>Takashi Akihiro</h3>
                             <p>Officer</p>
                             <a href="https://discord.com/users/1384540316195098646" target="_blank" class="discord-button">
@@ -501,7 +606,7 @@
                             </a>
                         </div>
                         <div class="staff-member">
-                            <img src="officier 3.webp" alt="Enma's Discord Avatar">
+                            <img src="officier 3.webp" alt="Discord avatar of officer Enma">
                             <h3>Enma</h3>
                             <p>Officer</p>
                             <a href="https://discord.com/users/361146489180782594" target="_blank" class="discord-button">
@@ -510,7 +615,7 @@
                             </a>
                         </div>
                         <div class="staff-member">
-                            <img src="officier 4.webp" alt="SHAHrix's Discord Avatar">
+                            <img src="officier 4.webp" alt="Discord avatar of officer SHAHrix">
                             <h3>SHAHrix</h3>
                             <p>Officer</p>
                             <a href="https://discord.com/users/1191673658645680208" target="_blank" class="discord-button">
@@ -541,29 +646,77 @@
                 </ol>
                 <p>Breaking rules &rarr; warning &rarr; removal.</p>
             </section>
+
+            <section class="section region-roles fade-in">
+                <h2>Discord Roles - Regions</h2>
+                <p>Indicate the regions you've completed to get a starter Pokémon role on Discord.</p>
+                <div class="region-roles-container">
+                    <div class="region-role-item">Kanto &rarr; <span>Charmander</span></div>
+                    <div class="region-role-item">Johto &rarr; <span>Cyndaquil</span></div>
+                    <div class="region-role-item">Hoenn &rarr; <span>Torchic</span></div>
+                    <div class="region-role-item">Sinnoh &rarr; <span>Chimchar</span></div>
+                    <div class="region-role-item">Unova &rarr; <span>Tepig</span></div>
+                </div>
+            </section>
+        </section>
+
+        <section id="games" class="content-section">
+            <div class="section games-section fade-in">
+                <h2>Guess That Pokémon!</h2>
+                <p>Click "New Pokémon" to start a new game. Guess the Pokémon's name from its silhouette!</p>
+                <div class="games-container">
+                    <div class="pokemon-game-container" id="game-area">
+                        <img id="pokemon-image" src="" alt="Pokémon Silhouette" style="display: none;">
+                        <div class="game-controls">
+                            <input type="text" id="guess-input" placeholder="Enter Pokémon Name">
+                            <button id="guess-button">Guess</button>
+                            <button id="new-pokemon-button">New Pokémon</button>
+                        </div>
+                        <div id="game-message"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="content-section">
+            <div class="section fade-in">
+                <h2>Gallery</h2>
+                <p>Welcome to our gallery! Here you can find some cool images related to Team Mew.</p>
+                <div class="intro-image-container">
+                    <img src="intro.png" alt="Team Mew Intro Image">
+                    <p style="margin-top: 10px;">Our intro image, perfect for a Discord channel!</p>
+                </div>
+            </div>
         </section>
 
         <section id="shiny-showcase" class="content-section">
-            <h2 style="text-align: center;">Shiny Showcase</h2>
-            <p style="text-align: center;">Coming soon! This is where we'll show off our team's latest shiny catches.</p>
+            <div class="section simple-content fade-in">
+                <h2>Shiny Showcase</h2>
+                <p>Team shiny showcases are available on our Discord server.</p>
+                <p style="margin-top: 20px;">
+                    <a href="https://discord.gg/UrgucWW3t4" target="_blank" style="font-weight: bold; color: var(--link-color);">Join the Discord server &rarr;</a>
+                </p>
+            </div>
         </section>
 
-        <section id="events" class="content-section simple-content">
-            <h2 style="text-align: center;">Events Calendar</h2>
-            <p>
-                Join our Discord server to stay up-to-date with all our upcoming events!
-                <br><br>
-                <a href="https://discord.gg/UrgucWW3t4" target="_blank" style="font-weight: bold; color: var(--link-color);">Join our Discord &rarr;</a>
-            </p>
+        <section id="events" class="content-section">
+            <div class="section simple-content fade-in">
+                <h2>Upcoming Events</h2>
+                <p>Find all event and tournament announcements on our Discord server.</p>
+                <p style="margin-top: 20px;">
+                    <a href="https://discord.gg/UrgucWW3t4" target="_blank" style="font-weight: bold; color: var(--link-color);">Join the Discord server &rarr;</a>
+                </p>
+            </div>
         </section>
 
-        <section id="guides" class="content-section simple-content">
-            <h2 style="text-align: center;">Guides & Tutorials</h2>
-            <p>
-                All our guides and tips for PokeMMO will be available.
-                <br><br>
-                <a href="https://discord.gg/UrgucWW3t4" target="_blank" style="font-weight: bold; color: var(--link-color);">Join our Discord &rarr;</a>
-            </p>
+        <section id="guides" class="content-section">
+            <div class="section simple-content fade-in">
+                <h2>Guides & Tutorials</h2>
+                <p>All useful guides and tutorials are available on our Discord server to help you on your PokeMMO adventure.</p>
+                <p style="margin-top: 20px;">
+                    <a href="https://discord.gg/UrgucWW3t4" target="_blank" style="font-weight: bold; color: var(--link-color);">Join the Discord server &rarr;</a>
+                </p>
+            </div>
         </section>
 
         <section class="section join-us fade-in">
@@ -630,8 +783,8 @@
             const faders = document.querySelectorAll('.fade-in');
 
             const appearOptions = {
-                threshold: 0.1, // L'élément devient visible quand 10% de celui-ci est à l'écran
-                rootMargin: "0px 0px -50px 0px" // Déclenchement 50px avant d'atteindre le bas de l'élément
+                threshold: 0.1, // Element becomes visible when 10% of it is on screen
+                rootMargin: "0px 0px -50px 0px" // Trigger 50px before reaching the bottom of the element
             };
 
             const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
@@ -649,7 +802,151 @@
                 appearOnScroll.observe(fader);
             });
         });
+
+        // GAMES SECTION SCRIPT
+        document.addEventListener('DOMContentLoaded', function() {
+            const pokemonData = [
+                { name: "Bulbasaur", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" },
+                { name: "Ivysaur", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png" },
+                { name: "Venusaur", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png" },
+                { name: "Charmander", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png" },
+                { name: "Charmeleon", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png" },
+                { name: "Charizard", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png" },
+                { name: "Squirtle", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png" },
+                { name: "Wartortle", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png" },
+                { name: "Blastoise", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png" },
+                { name: "Caterpie", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png" },
+                { name: "Metapod", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/11.png" },
+                { name: "Butterfree", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/12.png" },
+                { name: "Weedle", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png" },
+                { name: "Kakuna", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/14.png" },
+                { name: "Beedrill", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/15.png" },
+                { name: "Pidgey", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/16.png" },
+                { name: "Pidgeotto", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/17.png" },
+                { name: "Pidgeot", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/18.png" },
+                { name: "Rattata", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/19.png" },
+                { name: "Raticate", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/20.png" },
+                { name: "Spearow", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/21.png" },
+                { name: "Fearow", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/22.png" },
+                { name: "Ekans", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/23.png" },
+                { name: "Arbok", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/24.png" },
+                { name: "Pikachu", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" },
+                { name: "Raichu", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/26.png" },
+                { name: "Sandshrew", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/27.png" },
+                { name: "Sandslash", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/28.png" },
+                { name: "Nidoran♀", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/29.png" },
+                { name: "Nidorina", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/30.png" },
+                { name: "Nidoqueen", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/31.png" },
+                { name: "Nidoran♂", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/32.png" },
+                { name: "Nidorino", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/33.png" },
+                { name: "Nidoking", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/34.png" },
+                { name: "Clefairy", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/35.png" },
+                { name: "Clefable", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/36.png" },
+                { name: "Vulpix", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/37.png" },
+                { name: "Ninetales", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/38.png" },
+                { name: "Jigglypuff", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/39.png" },
+                { name: "Wigglytuff", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/40.png" },
+                { name: "Zubat", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/41.png" },
+                { name: "Golbat", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/42.png" },
+                { name: "Oddish", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/43.png" },
+                { name: "Gloom", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/44.png" },
+                { name: "Vileplume", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/45.png" },
+                { name: "Paras", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/46.png" },
+                { name: "Parasect", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/47.png" },
+                { name: "Venonat", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/48.png" },
+                { name: "Venomoth", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/49.png" },
+                { name: "Diglett", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/50.png" },
+                { name: "Dugtrio", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/51.png" },
+                { name: "Meowth", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/52.png" },
+                { name: "Persian", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/53.png" },
+                { name: "Psyduck", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/54.png" },
+                { name: "Golduck", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/55.png" },
+                { name: "Mankey", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/56.png" },
+                { name: "Primeape", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/57.png" },
+                { name: "Growlithe", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/58.png" },
+                { name: "Arcanine", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/59.png" },
+                { name: "Poliwag", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/60.png" },
+                { name: "Poliwhirl", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/61.png" },
+                { name: "Poliwrath", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/62.png" },
+                { name: "Abra", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/63.png" },
+                { name: "Kadabra", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/64.png" },
+                { name: "Alakazam", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/65.png" },
+                { name: "Machop", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/66.png" },
+                { name: "Machoke", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/67.png" },
+                { name: "Machamp", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/68.png" },
+                { name: "Bellsprout", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/69.png" },
+                { name: "Weepinbell", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/70.png" },
+                { name: "Victreebel", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/71.png" },
+                { name: "Tentacool", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/72.png" },
+                { name: "Tentacruel", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/73.png" },
+                { name: "Geodude", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/74.png" },
+                { name: "Graveler", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/75.png" },
+                { name: "Golem", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/76.png" },
+                { name: "Ponyta", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/77.png" },
+                { name: "Rapidash", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/78.png" },
+                { name: "Slowpoke", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/79.png" },
+                { name: "Slowbro", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/80.png" },
+                { name: "Magnemite", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/81.png" },
+                { name: "Magneton", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/82.png" },
+                { name: "Farfetch'd", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/83.png" },
+                { name: "Doduo", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/84.png" },
+                { name: "Dodrio", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/85.png" },
+                { name: "Seel", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/86.png" },
+                { name: "Dewgong", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/87.png" },
+                { name: "Grimer", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/88.png" },
+                { name: "Muk", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/89.png" },
+                { name: "Shellder", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/90.png" },
+                { name: "Cloyster", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/91.png" },
+                { name: "Gastly", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/92.png" },
+                { name: "Haunter", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/93.png" },
+                { name: "Gengar", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/94.png" },
+                { name: "Onix", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/95.png" },
+                { name: "Drowzee", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/96.png" },
+                { name: "Hypno", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/97.png" },
+                { name: "Krabby", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/98.png" },
+                { name: "Kingler", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/99.png" },
+                { name: "Voltorb", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/100.png" }
+            ];
+
+            const pokemonImage = document.getElementById('pokemon-image');
+            const guessInput = document.getElementById('guess-input');
+            const guessButton = document.getElementById('guess-button');
+            const newPokemonButton = document.getElementById('new-pokemon-button');
+            const gameMessage = document.getElementById('game-message');
+            const gameArea = document.getElementById('game-area');
+
+            let currentPokemon;
+
+            function getRandomPokemon() {
+                const randomIndex = Math.floor(Math.random() * pokemonData.length);
+                return pokemonData[randomIndex];
+            }
+
+            function startGame() {
+                currentPokemon = getRandomPokemon();
+                pokemonImage.src = currentPokemon.image;
+                pokemonImage.style.display = 'block';
+                gameArea.classList.remove('revealed');
+                guessInput.value = '';
+                gameMessage.textContent = 'Who\'s that Pokémon?';
+            }
+
+            function checkGuess() {
+                const guess = guessInput.value.trim().toLowerCase();
+                if (guess === currentPokemon.name.toLowerCase()) {
+                    gameMessage.textContent = `Correct! It was ${currentPokemon.name}!`;
+                    gameArea.classList.add('revealed');
+                } else {
+                    gameMessage.textContent = 'Incorrect, try again!';
+                }
+            }
+
+            guessButton.addEventListener('click', checkGuess);
+            newPokemonButton.addEventListener('click', startGame);
+
+            // Start the first game when the page loads
+            startGame();
+        });
     </script>
 </body>
 </html>
-
