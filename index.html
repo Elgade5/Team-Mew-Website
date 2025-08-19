@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team Mew - PokeMMO</title>
-    <link rel="icon" href="icon team.png" type="image/png">
+    <link rel="icon" type="image/x-icon" href="icon team.png">
     <meta name="description" content="Official website of Team Mew, an active and friendly team on PokeMMO. Join us for events and friendly fun!">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
@@ -449,6 +449,29 @@
             margin-top: 20px;
             font-size: 1.1em;
         }
+        
+        .event-details {
+            text-align: left;
+            padding: 20px;
+            background-color: var(--card-background);
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .event-details img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+        }
+        .event-details h3 {
+            color: var(--secondary-color);
+            border-bottom: 1px solid var(--primary-color);
+            padding-bottom: 5px;
+            margin-top: 20px;
+        }
+        .event-details p, .event-details li {
+            margin-bottom: 10px;
+        }
 
         /* Theme Selector */
         .theme-selector {
@@ -663,7 +686,7 @@
         <section id="games" class="content-section">
             <div class="section games-section fade-in">
                 <h2>Guess That Pokémon!</h2>
-                <p>Click "New Pokémon" to start a new game. Guess the Pokémon's name from its silhouette! (There are only 100 Pokemon because I care about my sanity lol)</p>
+                <p>Click "New Pokémon" to start a new game. Guess the Pokémon's name from its silhouette!</p>
                 <div class="games-container">
                     <div class="pokemon-game-container" id="game-area">
                         <img id="pokemon-image" src="" alt="Pokémon Silhouette" style="display: none;">
@@ -700,12 +723,57 @@
         </section>
 
         <section id="events" class="content-section">
-            <div class="section simple-content fade-in">
-                <h2>Upcoming Events</h2>
-                <p>Find all event and tournament announcements on our Discord server.</p>
-                <p style="margin-top: 20px;">
-                    <a href="https://discord.gg/UrgucWW3t4" target="_blank" style="font-weight: bold; color: var(--link-color);">Join the Discord server &rarr;</a>
-                </p>
+            <div class="section event-details fade-in">
+                <h2>Current Event</h2>
+                <img src="event2.png" alt="Event Banner">
+                <p><strong>🔥✨ Fire Catching Event ✨🔥</strong></p>
+                <p><strong>Theme:</strong> "Best & Worst IV Hunt!"</p>
+                <p><strong>Pokémon & Location:</strong> Larvesta in relic castle!</p>
+                
+                <h3>📅 Event Duration:</h3>
+                <ul>
+                    <li><strong>24-hour catching spree!</strong></li>
+                    <li>Start: [Saturday 23rd of August]</li>
+                    <li>Event lasts from midnight to midnight!</li>
+                </ul>
+                <p>Timezone is individual to every player, as long as the date caught is 23rd, the entry counts!</p>
+                
+                <h3>🎯 Objective:</h3>
+                <p>Catch Larvesta with either:</p>
+                <ul>
+                    <li>✅ Highest possible sum of IVs</li>
+                    <li>OR</li>
+                    <li>✅ Lowest possible sum of IVs</li>
+                </ul>
+                <p><strong>Bonus:</strong> +5 points if it has the Modest nature!</p>
+                
+                <h3>🏆 Prizes:</h3>
+                <ul>
+                    <li>1️⃣ Best IV Entry → 1000 RP Voucher</li>
+                    <li>2️⃣ Worst IV Entry → 500 RP Voucher</li>
+                </ul>
+                <p><em>(Only one submission per player. Winning one prize disqualifies you from the other.)</em></p>
+                
+                <h3>📝 Submission Rules:</h3>
+                <ul>
+                    <li>Only wild-caught Pokémon (No bred/hatched Pokémon allowed).</li>
+                    <li>One submission per player (Submit your best OR worst entry, not both).</li>
+                </ul>
+                <p><strong>3 Screenshots Required:</strong></p>
+                <ol>
+                    <li>Show IV screen (must include summary + IV checker).</li>
+                    <li>OT must match your IGN.</li>
+                    <li>Date and time caught (details tab).</li>
+                </ol>
+                <p>Send you entry in DM to @lmprovise</p>
+                
+                <h3>⚖️ Tiebreaker Rules:</h3>
+                <ul>
+                    <li>If two entries have the same IV total, the one with the correct nature wins.</li>
+                    <li>If still tied, the earlier submission wins.</li>
+                </ul>
+                
+                <p><strong>🎉 Good luck, Trainers! May RNG be with you!</strong></p>
             </div>
         </section>
 
@@ -952,4 +1020,3 @@
     </script>
 </body>
 </html>
-
