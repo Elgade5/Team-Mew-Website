@@ -565,7 +565,7 @@
                     </div>
                     <div class="member-count-card">
                         <h3>On PokeMMO</h3>
-                        <p>77</p>
+                        <p>95</p>
                     </div>
                 </div>
             </div>
@@ -871,9 +871,7 @@
             });
         });
 
- 
-
-        // GAMES SECTION SCRIPT
+        // SCRIPT FOR GAMES SECTION
         document.addEventListener('DOMContentLoaded', function() {
             const pokemonData = [
                 { name: "Bulbasaur", image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" },
@@ -1016,6 +1014,40 @@
 
             // Start the first game when the page loads
             startGame();
+        });
+
+        // SCRIPT TO FETCH DISCORD MEMBER COUNT
+        document.addEventListener('DOMContentLoaded', function() {
+            const discordInviteCode = 'UrgucWW3t4'; // Replace with your actual invite code
+            const discordMemberCountElement = document.getElementById('discord-member-count');
+
+            // Function to fetch and update member count
+            function updateDiscordMemberCount() {
+                fetch(`https://discord.com/api/v9/invites/${discordInviteCode}?with_counts=true`)
+                    .then(response => {
+                        // Check if the response is successful
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        // Use approximate_member_count which includes both online and offline members
+                        if (data && data.approximate_member_count) {
+                            discordMemberCountElement.textContent = data.approximate_member_count;
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching Discord member count:', error);
+                        discordMemberCountElement.textContent = 'N/A'; // Show N/A on error
+                    });
+            }
+
+            // Call the function on page load
+            updateDiscordMemberCount();
+
+            // Optional: Update the count every 5 minutes to keep it fresh
+            setInterval(updateDiscordMemberCount, 300000); // 300000 ms = 5 minutes
         });
     </script>
 </body>
